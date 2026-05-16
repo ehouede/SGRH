@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 # Système de Gestion des Ressources Humaines (SGRH) - Afrique de l'Ouest
 
 Ce projet est une application web moderne de GRH adaptée aux spécificités réglementaires de l'Afrique de l'Ouest (OHADA, CNSS, IPRES).
@@ -28,3 +29,6 @@ Ce projet est une application web moderne de GRH adaptée aux spécificités ré
 
 ## Auteur
 [Votre Nom]
+=======
+# SGRH
+>>>>>>> 6d492e161cae42802ae929d39280be61b00c5c26
