@@ -1,0 +1,138 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        @page {
+            size: A4;
+            margin: 1cm;
+        }
+        body {
+            font-family: Arial, sans-serif;
+            font-size: 10pt;
+            color: #333;
+        }
+        .header {
+            text-align: center;
+            border-bottom: 2px solid #2c3e50;
+            margin-bottom: 20px;
+            padding-bottom: 10px;
+        }
+        .company-info {
+            float: left;
+            width: 50%;
+        }
+        .employee-info {
+            float: right;
+            width: 45%;
+            border: 1px solid #ccc;
+            padding: 10px;
+        }
+        .clear { clear: both; }
+        .period {
+            text-align: center;
+            margin: 20px 0;
+            font-weight: bold;
+            background: #f0f0f0;
+            padding: 5px;
+        }
+        table {
+            width: 100%;
+            border-collapse: collapse;
+            margin-top: 20px;
+        }
+        th, td {
+            border: 1px solid #ddd;
+            padding: 8px;
+            text-align: left;
+        }
+        th {
+            background-color: #2c3e50;
+            color: white;
+        }
+        .total-row {
+            font-weight: bold;
+            background-color: #eee;
+        }
+        .net-salary {
+            margin-top: 30px;
+            font-size: 14pt;
+            text-align: right;
+            font-weight: bold;
+            color: #2c3e50;
+        }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>BULLETIN DE PAIE</h1>
+    </div>
+
+    <div class="company-info">
+        <strong>SGRH AFRIQUE SARL</strong><br>
+        Dakar, Sénégal<br>
+        NINEA: 123456789<br>
+    </div>
+
+    <div class="employee-info">
+        <strong>Employé:</strong> {{ bulletin.employe.prenom }} {{ bulletin.employe.nom }}<br>
+        <strong>Matricule:</strong> {{ bulletin.employe.matricule }}<br>
+        <strong>Poste:</strong> {{ bulletin.employe.poste }}<br>
+    </div>
+
+    <div class="clear"></div>
+
+    <div class="period">
+        Période: {{ bulletin.periode|date:"F Y" }}
+    </div>
+
+    <table>
+        <thead>
+            <tr>
+                <th>Désignation</th>
+                <th>Base</th>
+                <th>Taux</th>
+                <th>Part Salariale</th>
+                <th>Part Patronale</th>
+            </tr>
+        </thead>
+        <tbody>
+            <tr>
+                <td>Salaire de base</td>
+                <td>{{ bulletin.salaire_brut }}</td>
+                <td>-</td>
+                <td>{{ bulletin.salaire_brut }}</td>
+                <td>-</td>
+            </tr>
+            {% for detail in bulletin.details.all %}
+            <tr>
+                <td>{{ detail.rubrique.libelle }}</td>
+                <td>{{ detail.base }}</td>
+                <td>{{ detail.rubrique.taux_salarial }}%</td>
+                <td>-{{ detail.part_salariale }}</td>
+                <td>{{ detail.part_patronale }}</td>
+            </tr>
+            {% endfor %}
+            <tr class="total-row">
+                <td colspan="3">TOTAUX</td>
+                <td>{{ total_retenues }}</td>
+                <td>{{ total_patronal }}</td>
+            </tr>
+        </tbody>
+    </table>
+
+    <div class="net-salary">
+        NET À PAYER: {{ bulletin.salaire_net }} CFA
+    </div>
+
+    <div style="margin-top: 50px;">
+        <div style="float: left; width: 40%; text-align: center;">
+            <p>Signature Employeur</p>
+            <br><br>
+        </div>
+        <div style="float: right; width: 40%; text-align: center;">
+            <p>Signature Employé</p>
+            <br><br>
+        </div>
+    </div>
+</body>
+</html>

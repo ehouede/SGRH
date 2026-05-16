@@ -1,0 +1,312 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Mémoire GRH - Afrique de l'Ouest</title>
+    <style>
+        :root {
+            --primary-color: #2c3e50;
+            --secondary-color: #34495e;
+            --accent-color: #3498db;
+            --text-color: #333;
+            --bg-color: #f4f7f6;
+            --white: #ffffff;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            line-height: 1.6;
+            color: var(--text-color);
+            background-color: var(--bg-color);
+            margin: 0;
+            padding: 0;
+        }
+
+        .container {
+            max-width: 800px;
+            margin: 40px auto;
+            background: var(--white);
+            padding: 60px;
+            box-shadow: 0 4px 20px rgba(0,0,0,0.1);
+            border-radius: 8px;
+        }
+
+        header {
+            text-align: center;
+            border-bottom: 2px solid var(--primary-color);
+            margin-bottom: 40px;
+            padding-bottom: 20px;
+        }
+
+        h1 { color: var(--primary-color); font-size: 2.2em; margin-bottom: 10px; }
+        h2 { color: var(--secondary-color); border-bottom: 1px solid #ddd; padding-bottom: 10px; margin-top: 40px; }
+        h3 { color: var(--accent-color); margin-top: 25px; }
+
+        .title-page {
+            text-align: center;
+            height: 80vh;
+            display: flex;
+            flex-direction: column;
+            justify-content: center;
+        }
+
+        .author, .supervisor {
+            font-weight: bold;
+            font-size: 1.1em;
+            margin: 5px 0;
+        }
+
+        .abstract {
+            background: #f9f9f9;
+            padding: 20px;
+            border-left: 4px solid var(--accent-color);
+            font-style: italic;
+            margin: 20px 0;
+        }
+
+        .toc {
+            background: #f0f4f8;
+            padding: 20px;
+            border-radius: 5px;
+            margin: 30px 0;
+        }
+
+        .toc ul { list-style: none; padding-left: 20px; }
+        .toc li { margin-bottom: 8px; }
+
+        footer {
+            margin-top: 50px;
+            text-align: center;
+            font-size: 0.9em;
+            color: #777;
+        }
+
+        @media print {
+            .container { box-shadow: none; margin: 0; width: 100%; max-width: none; }
+            body { background: white; }
+        }
+    </style>
+</head>
+<body>
+    <div class="container">
+        <!-- PAGE DE GARDE -->
+        <div class="title-page">
+            <p style="text-transform: uppercase; font-weight: bold;">République [Votre Pays]</p>
+            <p>[Nom de votre institution / Université]</p>
+            <div style="margin: 50px 0;">
+                <img src="https://via.placeholder.com/150" alt="Logo Université" style="width: 120px;">
+            </div>
+            <p style="font-weight: bold;">MÉMOIRE DE FIN DE CYCLE</p>
+            <p>Pour l'obtention du diplôme de [Votre Diplôme]</p>
+            <p>Option : [Votre Option]</p>
+            
+            <h1>Conception et réalisation d’une application web de Gestion des Ressources Humaines (GRH) adaptée au contexte de l'Afrique de l'Ouest</h1>
+            <h3>Utilisation de Django REST Framework et React</h3>
+
+            <div style="margin-top: 40px; text-align: left; display: flex; justify-content: space-between;">
+                <div>
+                    <p class="author">Présenté par :</p>
+                    <p>[Votre Nom]</p>
+                </div>
+                <div style="text-align: right;">
+                    <p class="supervisor">Sous la direction de :</p>
+                    <p>[Nom de l'encadreur]</p>
+                </div>
+            </div>
+
+            <p style="margin-top: 50px;">Année Académique : 2025 - 2026</p>
+        </div>
+
+        <hr>
+
+        <!-- INTRODUCTION -->
+        <h2>INTRODUCTION GÉNÉRALE</h2>
+        <p>
+            La gestion des ressources humaines (GRH) constitue aujourd'hui le pivot central de la performance organisationnelle. Dans le contexte spécifique de l'Afrique de l'Ouest, cette fonction fait face à des défis uniques, mêlant exigences de modernisation technologique et respect de cadres réglementaires complexes, souvent hérités ou harmonisés par des organisations régionales comme l'OHADA.
+        </p>
+        
+        <h3>Contexte et Problématique</h3>
+        <p>
+            Malgré l'avènement de l'économie numérique, de nombreuses entreprises en Afrique de l'Ouest continuent de gérer leurs ressources humaines de manière artisanale (fichiers Excel disparates, registres papier). Cette situation entraîne des risques majeurs de non-conformité légale, notamment vis-à-vis des cotisations sociales (CNSS, IPRES) et de la gestion des contrats de travail.
+        </p>
+
+        <h3>Objectif du Projet</h3>
+        <p>
+            Le présent projet vise à concevoir une solution logicielle "SGRH" (Système de Gestion des Ressources Humaines) robuste, sécurisée et évolutive, capable d'automatiser les processus critiques tout en intégrant nativement les spécificités locales (paie CFA, types de congés régionaux, conventions collectives).
+        </p>
+
+        <!-- CHAPITRE 1 -->
+        <h2>CHAPITRE 1 : CONTEXTE ET ÉTAT DE L'ART</h2>
+        
+        <h3>1.1. Les Fondamentaux de la GRH en Afrique de l'Ouest</h3>
+        <p>
+            La GRH ne se limite plus à la simple administration du personnel. Elle englobe la gestion des compétences, le recrutement, la formation et surtout la conformité sociale.
+        </p>
+        
+        <h4>Spécificités Régionales</h4>
+        <p>
+            Le cadre légal en Afrique de l'Ouest est fortement marqué par :
+        </p>
+        <ul>
+            <li><strong>L'OHADA :</strong> Organisation pour l'Harmonisation en Afrique du Droit des Affaires, qui régit les contrats commerciaux et l'environnement juridique.</li>
+            <li><strong>La protection sociale :</strong> Des systèmes de cotisations complexes (Part patronale et part salariale) qui varient selon les pays (ex: Sénégal, Côte d'Ivoire).</li>
+            <li><strong>La monnaie :</strong> L'utilisation du Franc CFA et les règles de virement bancaire associées.</li>
+        </ul>
+
+        <h3>1.2. État de l'Art des Solutions Technologiques</h3>
+        <p>
+            L'analyse des solutions existantes révèle une fracture entre les ERP globaux (SAP, Oracle) inaccessibles aux PME locales, et les outils trop simplistes ne gérant pas la complexité de la paie régionale.
+        </p>
+
+        <h3>1.3. Choix de la Stack Technologique</h3>
+        <p>
+            Pour répondre aux besoins de performance et de sécurité, nous avons opté pour une architecture découplée :
+        </p>
+        <ul>
+            <li><strong>Backend : Django REST Framework (Python)</strong> - Reconnu pour sa robustesse, sa sécurité native et sa rapidité de développement.</li>
+            <li><strong>Frontend : React (JavaScript)</strong> - Pour une interface utilisateur réactive, fluide et moderne (SPA).</li>
+        </ul>
+
+        <!-- CHAPITRE 2 -->
+        <h2>CHAPITRE 2 : ANALYSE ET CONCEPTION DU SYSTÈME</h2>
+        
+        <h3>2.1. Analyse Approfondie des Besoins Fonctionnels</h3>
+        <p>
+            L'analyse des besoins est une étape cruciale pour garantir que la solution répondra aux attentes des différents utilisateurs. Nous avons identifié quatre acteurs principaux :
+        </p>
+        <ul>
+            <li><strong>Administrateur RH :</strong> Gestion complète du personnel, de la paie et du paramétrage.</li>
+            <li><strong>Manager :</strong> Validation des congés, évaluation des performances de son équipe.</li>
+            <li><strong>Employé :</strong> Consultation des bulletins, demande de congés, mise à jour des informations personnelles.</li>
+            <li><strong>Candidat :</strong> Consultation des offres et dépôt de candidatures.</li>
+        </ul>
+
+        <h3>2.2. Modélisation des Données (MCD)</h3>
+        <p>
+            Le Modèle Conceptuel de Données (MCD) repose sur une structure relationnelle solide pour gérer la complexité des contrats et de la paie.
+        </p>
+        <table border="1" style="width:100%; border-collapse: collapse; margin: 20px 0;">
+            <tr style="background-color: #eee;">
+                <th>Entité</th>
+                <th>Description</th>
+            </tr>
+            <tr>
+                <td>Employe</td>
+                <td>Informations personnelles, matricule, poste, service.</td>
+            </tr>
+            <tr>
+                <td>Contrat</td>
+                <td>Type (CDI/CDD), dates, salaire de base, clauses spécifiques.</td>
+            </tr>
+            <tr>
+                <td>RubriquePaie</td>
+                <td>Définition des primes et cotisations (CNSS, IPRES, IGR).</td>
+            </tr>
+            <tr>
+                <td>BulletinPaie</td>
+                <td>Calcul mensuel des gains et retenues pour un employé.</td>
+            </tr>
+        </table>
+
+        <h3>2.3. Modélisation des Traitements (Diagramme de Séquence)</h3>
+        <p>
+            Le processus de génération de la paie suit un workflow rigoureux :
+        </p>
+        <ol>
+            <li>Collecte des variables du mois (absences, primes exceptionnelles).</li>
+            <li>Calcul des cotisations sociales selon le barème en vigueur.</li>
+            <li>Génération du bulletin au format PDF.</li>
+            <li>Notification de l'employé via la plateforme.</li>
+        </ol>
+
+        <h3>2.4. Conception de l'IHM</h3>
+        <p>
+            L'interface a été conçue pour être "Dashboard-centric". L'utilisateur doit avoir accès aux informations clés (KPIs) dès sa connexion :
+        </p>
+        <ul>
+            <li>Effectif total par département.</li>
+            <li>Masse salariale mensuelle.</li>
+            <li>Taux d'absentéisme.</li>
+            <li>Alertes sur les fins de contrats (CDD).</li>
+        </ul>
+
+        <!-- CHAPITRE 3 -->
+        <h2>CHAPITRE 3 : RÉALISATION AVEC DJANGO ET REACT</h2>
+        
+        <h3>3.1. Environnement et Architecture</h3>
+        <p>
+            Le projet est structuré en deux parties distinctes communiquant via une API REST :
+        </p>
+        <ul>
+            <li><strong>Le Backend (Django) :</strong> Gère la base de données MySQL (WampServer), l'authentification JWT et la logique métier complexe du calcul de la paie.</li>
+            <li><strong>Le Frontend (React) :</strong> Une Single Page Application (SPA) utilisant Ant Design pour une interface utilisateur ergonomique, incluant un <strong>organigramme dynamique</strong> et un <strong>calendrier des absences</strong>.</li>
+        </ul>
+
+        <h3>3.2. Implémentation du Module "Paie & Conformité"</h3>
+        <p>
+            C'est le module le plus critique. Nous avons implémenté une logique de calcul automatisée qui prend en compte les taux de cotisations sociales en vigueur en Afrique de l'Ouest :
+        </p>
+        <pre style="background: #f4f4f4; padding: 15px; border-radius: 5px; overflow-x: auto;">
+# Exemple de calcul simplifié dans Django
+part_sal = (salaire_base * taux_salarial) / 100
+salaire_net = salaire_brut - total_retenues
+        </pre>
+        <p>
+            Le système permet de générer des bulletins de paie détaillés incluant la part salariale et la part patronale pour des organismes comme la <strong>CNSS</strong> et l'<strong>IPRES</strong>.
+        </p>
+
+        <h3>3.3. Intégration de la Base de Données MySQL</h3>
+        <p>
+            Conformément aux exigences, nous avons utilisé <strong>MySQL via WampServer</strong> pour le stockage des données. La base de données nommée <code>gestion_rh</code> centralise toutes les informations relatives aux employés, contrats et historiques de paie.
+        </p>
+
+        <!-- CHAPITRE 4 -->
+        <h2>CHAPITRE 4 : PRÉSENTATION, TESTS ET PERSPECTIVES</h2>
+        
+        <h3>4.1. Présentation de l'Application Finale</h3>
+        <p>
+            L'application finale offre une expérience utilisateur fluide. Le tableau de bord permet de visualiser en un coup d'œil les alertes RH (demandes de congés en attente, contrats arrivant à échéance). L'annuaire du personnel facilite la recherche et la consultation des fiches employés.
+        </p>
+
+        <h3>4.2. Stratégie de Tests</h3>
+        <p>
+            Nous avons adopté une approche de test rigoureuse :
+        </p>
+        <ul>
+            <li><strong>Tests Unitaires (Backend) :</strong> Validation des algorithmes de calcul de la paie pour garantir l'absence d'erreurs d'arrondi ou de logique.</li>
+            <li><strong>Tests d'Intégration :</strong> Vérification de la communication entre React et les endpoints Django.</li>
+            <li><strong>Tests Utilisateurs :</strong> Évaluation de l'ergonomie par un panel d'utilisateurs fictifs.</li>
+        </ul>
+
+        <h3>4.3. Analyse Critique et Perspectives</h3>
+        <p>
+            Le projet a atteint ses objectifs principaux. Cependant, des évolutions sont envisageables :
+        </p>
+        <ul>
+            <li>Intégration d'un module d'Intelligence Artificielle pour le tri automatique des CVs.</li>
+            <li>Mise en place d'une application mobile compagnon (PWA).</li>
+            <li>Gestion de la signature électronique des contrats.</li>
+        </ul>
+
+        <hr>
+
+        <h2>CONCLUSION GÉNÉRALE</h2>
+        <p>
+            La réalisation de ce système de Gestion des Ressources Humaines a permis de démontrer l'efficacité du couple <strong>Django / React</strong> pour répondre à des problématiques métier complexes. En adaptant les fonctionnalités aux réalités de l'Afrique de l'Ouest, nous proposons une solution concrète pour la modernisation des processus RH dans la région.
+        </p>
+
+        <h3>BIBLIOGRAPHIE</h3>
+        <ul>
+            <li>Documentation officielle Django REST Framework : <i>www.django-rest-framework.org</i></li>
+            <li>Documentation officielle React : <i>react.dev</i></li>
+            <li>Codes du Travail (Sénégal, Côte d'Ivoire).</li>
+            <li>Ressources OHADA : <i>www.ohada.com</i></li>
+        </ul>
+
+        <footer>
+            &copy; 2026 - [Votre Nom] - Mémoire GRH
+        </footer>
+    </div>
+</body>
+</html>

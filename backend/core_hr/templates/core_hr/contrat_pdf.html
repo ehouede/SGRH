@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        body { font-family: serif; line-height: 1.5; text-align: justify; }
+        .header { text-align: center; margin-bottom: 50px; }
+        .article { font-weight: bold; margin-top: 20px; }
+    </style>
+</head>
+<body>
+    <div class="header">
+        <h1>CONTRAT DE TRAVAIL</h1>
+        <h3>{{ contrat.type_contrat }}</h3>
+    </div>
+
+    <p>ENTRE LES SOUSSIGNÉS :</p>
+    <p><strong>La Société SGRH AFRIQUE SARL</strong>, représentée par [Nom du Représentant], ci-après dénommée "L'Employeur".</p>
+    <p>ET</p>
+    <p><strong>M. / Mme {{ employe.prenom }} {{ employe.nom }}</strong>, né(e) le {{ employe.date_naissance }}, demeurant à {{ employe.adresse }}, ci-après dénommé(e) "Le Salarié".</p>
+
+    <div class="article">ARTICLE 1 : ENGAGEMENT</div>
+    <p>Le Salarié est engagé à compter du {{ contrat.date_debut }} en qualité de {{ employe.poste }}.</p>
+
+    <div class="article">ARTICLE 2 : RÉMUNÉRATION</div>
+    <p>En contrepartie de ses services, le Salarié percevra un salaire de base mensuel brut de {{ contrat.salaire_de_base }} CFA.</p>
+
+    <div class="article">ARTICLE 3 : DURÉE DU TRAVAIL</div>
+    <p>La durée hebdomadaire du travail est celle en vigueur dans l'entreprise, conformément au Code du Travail.</p>
+
+    <div class="article">ARTICLE 4 : CONGÉS PAYÉS</div>
+    <p>Le Salarié bénéficiez des congés payés conformément aux dispositions légales et conventionnelles en vigueur.</p>
+
+    <div style="margin-top: 100px;">
+        <div style="float: left; width: 45%;">
+            Fait à Dakar, le [Date du jour]<br>
+            <strong>L'Employeur</strong>
+        </div>
+        <div style="float: right; width: 45%;">
+            <br>
+            <strong>Le Salarié (Lu et Approuvé)</strong>
+        </div>
+    </div>
+</body>
+</html>
